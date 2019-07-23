@@ -1,0 +1,55 @@
+body {
+  background-color: #dfe6e9;
+  background: -webkit-linear-gradient(to right, rgb(193, 197, 202), #dfe6e9, #dfe6e9);
+  background: linear-gradient(to right, rgb(193, 197, 202), #dfe6e9, #dfe6e9);
+  height: 100%;
+  width: 95%;
+}
+
+.center {
+  margin-top: 10%;
+}
+
+.contador_pessoas {
+  text-align: center;
+  margin-left:100px;
+  margin-right: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#countdown_dashboard .dashp {
+  border:5px solid #2f3640; 
+  width:260px; 
+  height: 200px; 
+  padding:98px;  
+  border-radius: 42px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.numero {
+  min-width: 20px;
+  max-width: 55px;
+  color: #000000;
+  font-size: 220px;
+  margin-top: auto;
+  margin-left: 90px;
+  margin-border auto;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 5px;
+  height:100px;
+}
+
+.numero1 {
+  min-width: 20px;
+  max-width: 55px;
+  color: #000000;
+  font-size: 220px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 5px;
+  height:100px;
+}

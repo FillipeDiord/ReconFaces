@@ -1,0 +1,62 @@
+table {
+  font-family: arial, sans-serif;
+  width: 100%;
+}
+
+th {
+  border: 1px solid #2d3436;
+  text-align: center;
+  padding: 8px;
+  background-color: #74b9ff;
+}
+
+td {
+  border: 1px solid #2d3436;
+  text-align: center;
+  padding: 8px;
+  background-color: #ecf0f1;
+}
+
+#iconEditar {
+  width: 32px;
+  height: 32px;
+}
+
+#iconExcluir {
+  width: 32px;
+  height: 32px;
+}
+
+body {
+  background-color: #9CECFB;
+  background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+  background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  color: #ecf0f1;
+  text-align: center;
+  margin: 90px;
+}
+
+.form-control {
+  width: 96%;
+}
+
+.center {
+  margin-top: 10%;
+}
+
+.espaco_img {
+   margin-top: 20px;
+}
+
+.tam_fonte {
+  font-size: 20px;
+}
+
+.espaco_botao_reconhecer {
+   margin-left: 60px;
+}

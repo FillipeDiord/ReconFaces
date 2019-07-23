@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/cadastropessoa.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'javascript/cadastro.js' %}"></script>
+    <title>Informações Pessoa</title>
+</head>
+<body>
+
+    <div class="container center">
+        <div class="col-sm-7 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h1 class="card-title text-center"> Registro Pessoa </h1>
+
+                    <form  method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <div class="col-sm-9, center">
+                            <label> Nome:</label>
+                            <input type="text" class="form-control" name="nome" value="{{pessoa.nome}}" maxlength="30" required="" id="id_nome">
+                        </div>
+
+                        <div class="col-sm-9, center">
+                            <label> Email:</label>
+                            <input type="email" class="form-control" name="email" value="{{pessoa.email}}" maxlength="120" required id="id_email">
+                        </div>
+
+                        <div class="col-sm-6, center">
+                            <label> CPF:</label>
+                            <input type="text" class="form-control" name="cpf" value="{{pessoa.cpf}}" maxlength="11" required id="id_cpf">
+                        </div>
+
+                        <div class="col-sm-6, center">
+                            <label> Celular:</label>
+                            <input type="text" class="form-control" name="celular" value="{{pessoa.celular}}" maxlength="11" required id="id_celular">
+                        </div>
+
+                        <div class="col-sm-6, center">
+                            <label> Idade:</label>
+                            <input type="number" class="form-control" name="idade" value="{{pessoa.idade}}" required id="id_idade">
+                        </div>
+
+                        <div class="col-sm-6, center">
+                            <label class="tam_fonte"> Fotos:</label>
+                        </div>
+
+                        <div class="row espaco_img">
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">Foto 1</div>
+                                        <div class="card-body">
+                                            <img id="foto1" src="{{pessoa.foto1.url}}" class="img-fluid rounded"/>
+							                <div>
+                                                <input type="file" name="foto1"  accept="image/*" id="id_foto1" hidden="hidden" onchange="carregaFoto1(event)" />
+                                                <button type="button" id="btn1" class="btn btn-primary espaco_img" > <label for="id_foto1"> <span>Ulpoad</span></label> </button>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">Foto 2</div>
+                                        <div class="card-body">
+                                            <img id="foto2"  src="{{pessoa.foto2.url}}" class="img-fluid rounded"/>
+                                            <div>
+                                               <input type="file" name="foto2" accept="image/*" id="id_foto2" hidden="hidden" onchange="carregaFoto2(event)" />
+                                               <button type="button" id="btn2" class="btn btn-primary espaco_img" > <label for="id_foto2"> <span>Ulpoad</span></label> </button>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row espaco_img">
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">Foto 3</div>
+                                        <div class="card-body">
+                                            <img id="foto3" src="{{pessoa.foto3.url}}" class="img-fluid rounded"/>
+                                            <div>
+                                               <input type="file" name="foto3" accept="image/*" id="id_foto3" hidden="hidden" onchange="carregaFoto3(event)" />
+                                               <button type="button" id="btn3" class="btn btn-primary espaco_img" > <label for="id_foto3"> <span>Ulpoad</span></label> </button>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">Foto 4</div>
+                                        <div class="card-body">
+                                            <img id="foto4" src="{{pessoa.foto4.url}}" class="img-fluid rounded"/>
+                                                <div>
+                                                    <input type="file" name="foto4" accept="image/*" id="id_foto4" hidden="hidden" onchange="carregaFoto4(event)" />
+                                                    <button type="button" id="btn4" class="btn btn-primary espaco_img" > <label for="id_foto4"> <span>Ulpoad</span></label> </button>
+                                                </div>
+                                        </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row espaco_img">
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">Foto 5</div>
+                                        <div class="card-body">
+                                            <img id="foto5" src="{{pessoa.foto5.url}}" class="img-fluid rounded"/>
+                                            <div>
+                                                <input type="file" name="foto5" accept="image/*" id="id_foto5" hidden="hidden" onchange="carregaFoto5(event)" />
+                                                <button type="button" id="btn5" class="btn btn-primary espaco_img" > <label for="id_foto5"> <span>Ulpoad</span></label> </button>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">Foto 6</div>
+                                        <div class="card-body">
+                                            <img id="foto6" src="{{pessoa.foto6.url}}" class="img-fluid rounded"/>
+                                            <div>
+                                                <input type="file" name="foto6" accept="image/*" id="id_foto6" hidden="hidden" onchange="carregaFoto6(event)" />
+                                                <button type="button" id="btn6" class="btn btn-primary espaco_img"> <label for="id_foto6"> <span>Ulpoad</span></label> </button>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="center">
+                            <button type="submit" class="btn btn-lg btn-primary btn-block text-uppercase">Concluir</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+body {
+  background-color: #9CECFB;
+  background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+  background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+  height: 100%;
+  width: 100%;
+}
+
+.form-control {
+  width: 96%;
+}
+
+.center {
+  margin-top: 10%;
+}
+
+.espaco_img {
+   margin-top: 20px;
+}
+
+.tam_fonte {
+  font-size: 20px;
+}

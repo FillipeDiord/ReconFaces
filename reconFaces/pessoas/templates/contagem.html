@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/contagem.css' %}">
+  <title>Totalidade de Pessoas</title>
+</head>
+<body>
+
+  <body>
+
+    <h1 class="contador_pessoas">
+        Número Total de Pessoas
+    </h1>
+
+    <div id="countdown_dashboard">
+
+      <div class="dashp">
+        {% if contagem.identificadas < 10 %}
+          <div class ="numero">
+		    {{contagem.identificadas}}
+	       </div>
+        {% endif %}
+
+        {% if contagem.identificadas > 9 %}
+          <div class ="numero1">
+		    {{contagem.identificadas}}
+	       </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </body>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/listar.css' %}">
+  <title>Lista de Pessoas Cadastradas</title>
+</head>
+<body>
+
+ <h1>Lista de Pessoas Cadastradas</h1>
+  <div class="container">
+    <div class="col">
+        {% if user.is_authenticated %}
+            <p>Ola {{user.username }}
+                <a href="{% url 'logout' %}">
+                    <span class="badge badge-danger">Sair</span>
+                </a>
+            </p>
+        {% endif %}
+    </div>
+
+    <div class="table table-bordered">
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Cpf</th>
+          <th>Celular</th>
+          <th>Idade</th>
+          <th>Opções</th>
+        </tr>
+
+        {% for pessoa in pessoas %}
+          <tr>
+            <td>{{pessoa.nome}}</td>
+            <td>{{pessoa.email}}</td>
+            <td>{{pessoa.cpf}}</td>
+            <td>{{pessoa.celular}}</td>
+            <td>{{pessoa.idade}}</td>
+            <td><input onClick="window.open('{% url 'pessoa_alterar' pessoa.id %}')" type="image" id="iconEditar" src="{% static 'img/editar.png' %}" alt="Editar">
+               <input onClick="window.open('{% url 'pessoa_deletar' pessoa.id %}')" type="image" id="iconExcluir" src="{% static 'img/lixeira.png' %}" alt="Excluir"></td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+    <br>  <br>  <br>
+
+    <a href="{% url 'pessoa_nova' %}" class="btn btn-primary"> Nova Pessoa</a>
+
+    <a href="{% url 'pessoa_reconhecimento' %}" class="btn btn-success espaco_botao_reconhecer"> Reconhecer</a>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.espaco_login {
+    margin-top: 15px;
+}
+
+body {
+    background: #9CECFB;
+    background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+    background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+}
+
+.center {
+    margin-top: 10%;
+}
